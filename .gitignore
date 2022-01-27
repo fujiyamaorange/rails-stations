@@ -37,3 +37,9 @@ yarn-debug.log*
 
 # For techtrain clie
 .techtrain/config.toml
+
+# node package manager
+.nvmrc
+
+# ruby package manager
+.ruby-version

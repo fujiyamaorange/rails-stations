@@ -1,0 +1,11 @@
+<div>
+  <h1>Movies</h1>
+  <ul class="movie-lists">
+    <% @movies.each do |movie| %>
+      <li class="movie-item">
+        <h3 class="movie-title" ><%= movie[:name] %></h3>
+        <img class="movie-image" src="<%= movie[:image_url] %>">
+      </li>
+    <% end %>
+  </div>
+</div>

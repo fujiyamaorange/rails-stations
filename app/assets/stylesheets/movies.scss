@@ -1,0 +1,32 @@
+// Place all the styles related to the movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.movie-lists {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+
+	@media screen and (max-width: 1300px) {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	@media screen and (max-width: 1000px) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	@media screen and (max-width: 700px) {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+}
+
+.movie-item {
+	list-style: none;
+}
+
+.movie-title {
+	size: 1.5rem;
+}
+
+.movie-image {
+	width: 300px;
+}
