@@ -1,0 +1,29 @@
+<div>
+  <h1>hello this is new movie form page</h1>
+  <div class="movie-form">
+    <%= form_tag("/admin/movies", method: :post) do%>
+      <div class="form-items">
+        <label class="form-label" for="title">映画タイトル</label>
+        <input class="form-input" type="text" name="title"> 
+      </div>
+      <div class="form-items">
+        <label class="form-label" for="year">上映年</label>
+        <input class="form-input" type="text" name="year"> 
+      </div>
+      <div class="form-items">
+        <label class="form-label" for="is_showing">上映中か</label>
+        <input type="hidden" name="is_showing" value="0"> 
+        <input class="form-input form-checkbox" type="checkbox" name="is_showing" value="1"> 
+      </div>
+      <div class="form-items">
+        <label class="form-label" for="description">概要</label>
+        <textarea class="form-input" type="text" name="description"></textarea>
+      </div>
+      <div class="form-items">
+        <label class="form-label" for="image_url">画像URL</label>
+        <input class="form-input" type="text" name="image_url"> 
+      </div>
+      <input type="submit">
+    <% end %>
+  </div>
+</div>

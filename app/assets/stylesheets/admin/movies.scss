@@ -13,3 +13,28 @@
 .movie-table-items {
 	text-align: center;
 }
+
+.movie-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-items {
+	display: flex;
+}
+.form-label {
+	display: inline-flex;
+	align-items: center;
+	border: 2px solid gray;
+	width: 160px;
+	height: 40px;
+}
+
+.form-input {
+	width: 100%;
+}
+
+.form-checkbox {
+	height: 40px;
+	margin: 0;
+}
