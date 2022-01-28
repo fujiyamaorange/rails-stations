@@ -1,0 +1,15 @@
+// Place all the styles related to the admin::movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.movie-table {
+	border-collapse: collapse;
+}
+.movie-header {
+	background: blue;
+	color: white;
+}
+
+.movie-table-items {
+	text-align: center;
+}
