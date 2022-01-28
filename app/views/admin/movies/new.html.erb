@@ -3,12 +3,12 @@
   <div class="movie-form">
     <%= form_tag("/admin/movies", method: :post) do%>
       <div class="form-items">
-        <label class="form-label" for="title">映画タイトル</label>
-        <input class="form-input" type="text" name="title"> 
+        <label class="form-label" for="name">映画タイトル</label>
+        <input class="form-input" type="text" name="name" value="<%= @movie.name %>"> 
       </div>
       <div class="form-items">
         <label class="form-label" for="year">上映年</label>
-        <input class="form-input" type="text" name="year"> 
+        <input class="form-input" type="text" name="year" value="<%= @movie.year %>"> 
       </div>
       <div class="form-items">
         <label class="form-label" for="is_showing">上映中か</label>
@@ -17,11 +17,11 @@
       </div>
       <div class="form-items">
         <label class="form-label" for="description">概要</label>
-        <textarea class="form-input" type="text" name="description"></textarea>
+        <textarea class="form-input" type="text" name="description" value="<%= @movie.description %>"></textarea>
       </div>
       <div class="form-items">
         <label class="form-label" for="image_url">画像URL</label>
-        <input class="form-input" type="text" name="image_url"> 
+        <input class="form-input" type="text" name="image_url" value="<%= @movie.image_url %>"> 
       </div>
       <input type="submit">
     <% end %>
