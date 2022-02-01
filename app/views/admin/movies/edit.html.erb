@@ -1,0 +1,34 @@
+<div>
+  <h1>this is edit movie page</h1>
+  <div class="movie-form">
+    <%= form_tag("/admin/movies/#{@movie.id}", method: :put) do%>
+      <div class="form-items">
+        <label class="form-label" for="name">映画タイトル</label>
+        <input class="form-input" type="text" name="name" value="<%= @movie.name %>"> 
+      </div>
+      <div class="form-items">
+        <label class="form-label" for="year">上映年</label>
+        <input class="form-input" type="text" name="year" value="<%= @movie.year %>"> 
+      </div>
+      <div class="form-items">
+        <label class="form-label" for="is_showing">上映中か</label>
+        <input type="hidden" name="is_showing" value="0">
+        <%# 初期値を表現 %>
+        <% if @movie.is_showing %>
+          <input class="form-input form-checkbox" type="checkbox" name="is_showing" value="1" checked> 
+        <% else %>
+          <input class="form-input form-checkbox" type="checkbox" name="is_showing" value="1"> 
+        <% end%>
+      </div>
+      <div class="form-items">
+        <label class="form-label" for="description">概要</label>
+        <textarea class="form-input" type="text" name="description"><%= @movie.description %></textarea>
+      </div>
+      <div class="form-items">
+        <label class="form-label" for="image_url">画像URL</label>
+        <input class="form-input" type="text" name="image_url" value="<%= @movie.image_url %>"> 
+      </div>
+      <input type="submit" value="変更">
+    <% end %>
+  </div>
+</div>
