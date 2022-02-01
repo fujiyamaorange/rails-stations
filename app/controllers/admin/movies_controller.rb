@@ -22,7 +22,7 @@ class Admin::MoviesController < ApplicationController
 
     begin
       if @movie.save
-        redirect_to("/movies")
+        redirect_to("/admin/movies")
       else
         flash[:notice] = '登録に失敗しました'
         redirect_to("/admin/movies/new")
@@ -60,6 +60,22 @@ class Admin::MoviesController < ApplicationController
       flash[:notice] = '変更に失敗しました'
       Rails.logger.debug "変更に失敗しました"
       redirect_to("/admin/movies/#{@move.id}")
+    end
+  end
+
+  def destroy
+    @movie = Movie.find_by(id: params[:id])
+
+    begin
+      if @movie.destroy
+        flash[:notice] = '投稿を削除しました'
+        redirect_to("/admin/movies")
+      else
+        flash[:notice] = '投稿の削除に失敗しました'
+        redirect_to("/admin/movies")
+      end
+    rescue
+      raise ActiveRecord::RecordNotFound
     end
     
   end

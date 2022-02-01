@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     post 'movies' => 'movies#create'
     get 'movies/new' => 'movies#new'
     put 'movies/:id' => 'movies#update'
+    delete 'movies/:id' => 'movies#destroy'
     get 'movies/:id/edit' => 'movies#edit'
   end
   get 'movies' => 'movies#index'

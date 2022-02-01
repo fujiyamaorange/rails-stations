@@ -29,6 +29,7 @@
         <input class="form-input" type="text" name="image_url" value="<%= @movie.image_url %>"> 
       </div>
       <input type="submit" value="変更">
+      <%= link_to "削除", "/admin/movies/#{@movie.id}", method: :delete, data: { confirm: "【確認】投稿を削除してもよろしいですか？" } %>
     <% end %>
   </div>
 </div>
