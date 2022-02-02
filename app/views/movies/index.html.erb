@@ -1,15 +1,17 @@
 <div>
-  <h1>Movies</h1>
-
-  <%= form_with url: {controller: 'movies', action: 'index'}, method: :get do |f| %>
-    <%= f.submit "検索" %>
-    <%= f.text_field :query, value: @query, :placeholder => "キーワードで検索する" %>
-    <%= f.radio_button :state, :all, checked: @state == 'all' %>
-    <%= f.label :state_all, "すべて" %>
-    <%= f.radio_button :state, :open, checked: @state == 'open' %>
-    <%= f.label :state_open, "公開中" %>
-    <%= f.radio_button :state, :close, checked: @state == 'close' %>
-    <%= f.label :state_close, "公開予定" %>
+  <%= form_with url: {controller: 'movies', action: 'index'}, method: :get, class: "form-container" do |f| %>
+    <div class="search-box">
+      <%= f.submit "検索", class: "search-button" %>
+      <%= f.text_field :query, value: @query, :placeholder => "キーワードで検索する", class: "search-input" %>
+    </div>
+    <div class="radio-box">
+      <%= f.radio_button :state, :all, checked: @state == 'all', class: "radio-item" %>
+      <%= f.label :state_all, "すべて", class: "radio-item" %>
+      <%= f.radio_button :state, :open, checked: @state == 'open', class: "radio-item" %>
+      <%= f.label :state_open, "公開中", class: "radio-item" %>
+      <%= f.radio_button :state, :close, checked: @state == 'close', class: "radio-item" %>
+      <%= f.label :state_close, "公開予定", class: "radio-item" %>
+    </div>
   <% end %>
 
   <ul class="movie-lists">

@@ -2,6 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.form-container {
+	margin: 4rem auto 0 auto;
+}
+
+.search-box {
+	display: flex;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.search-button {
+	padding: 0.5rem 1rem;
+	border: 1px solid black;
+	background-color: white;
+	cursor: pointer;
+	border-radius: 0.4rem;
+}
+
+.search-input {
+	width: 100%;
+	margin-left: 2rem;
+	border-radius: 0.4rem;
+	border: 1px solid black;
+	padding: 0.5rem 1rem;
+}
+
+.radio-box {
+	margin: 2rem auto 0 auto;
+	width: 300px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.radio-item {
+	cursor: pointer;
+}
+
 .movie-lists {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
