@@ -6,8 +6,10 @@ class MoviesController < ApplicationController
 
     # ラジオボタンでの絞り
     selected = Movie.all
-    if params[:state] != 'all'
+    if params[:state].present? && params[:state] != 'all'
       selected = @movies.where(is_showing: params[:state] == 'open' ? true : false) 
+    else
+      @state = 'all'
     end
 
     # キーワードでの絞り
